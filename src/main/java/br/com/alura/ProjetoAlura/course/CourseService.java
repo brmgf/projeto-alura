@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.regex.Pattern;
 
 @Slf4j
@@ -25,12 +26,28 @@ public class CourseService {
         repository.save(course);
     }
 
-    public String validateCode(String code) {
+    private String validateCode(String code) {
         if (!pattern_course_code.matcher(code).matches()) {
             log.error("Error validating course code: the code is invalid.");
             throw new DomainException("The code entered is not valid, please try again.");
         }
 
         return code;
+    }
+
+    @Transactional(readOnly = true)
+    public Course findByCode(String code) {
+        return repository.findByCode(code).orElseThrow(
+                () -> new DomainException("There is no course with an informed code, please try again.")
+        );
+    }
+
+    @Transactional
+    public void inactive(@Valid Course course) {
+        if (Status.ACTIVE.equals(course.getStatus())) {
+            course.setStatus(Status.INACTIVE);
+            course.setInactivateDateTime(LocalDateTime.now());
+            repository.save(course);
+        }
     }
 }
