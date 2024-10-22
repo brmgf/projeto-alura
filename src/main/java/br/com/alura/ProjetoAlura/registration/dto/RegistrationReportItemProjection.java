@@ -1,4 +1,4 @@
-package br.com.alura.ProjetoAlura.registration;
+package br.com.alura.ProjetoAlura.registration.dto;
 
 public interface RegistrationReportItemProjection {
 

@@ -1,5 +1,7 @@
-package br.com.alura.ProjetoAlura.registration;
+package br.com.alura.ProjetoAlura.registration.repository;
 
+import br.com.alura.ProjetoAlura.registration.dto.RegistrationReportItemProjection;
+import br.com.alura.ProjetoAlura.registration.model.Registration;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

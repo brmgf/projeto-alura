@@ -1,4 +1,4 @@
-package br.com.alura.ProjetoAlura.registration;
+package br.com.alura.ProjetoAlura.registration.dto;
 
 import org.springframework.stereotype.Component;
 
@@ -7,7 +7,7 @@ import java.util.List;
 @Component
 public class RegistrationReportItemAssembler {
 
-    public RegistrationReportItem toItem(RegistrationReportItemProjection projection) {
+    private RegistrationReportItem toItem(RegistrationReportItemProjection projection) {
         return RegistrationReportItem.builder()
                 .courseName(projection.getCourseName())
                 .courseCode(projection.getCourseCode())

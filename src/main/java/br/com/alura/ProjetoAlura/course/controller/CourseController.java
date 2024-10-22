@@ -28,7 +28,7 @@ public class CourseController {
     }
 
     @PostMapping("/course/{code}/inactive")
-    public ResponseEntity createCourse(@PathVariable("code") String courseCode) {
+    public ResponseEntity inactiveCourse(@PathVariable("code") String courseCode) {
         Course course = courseService.findByCode(courseCode);
         courseService.inactive(course);
         return ResponseEntity.ok().build();

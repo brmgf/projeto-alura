@@ -1,7 +1,14 @@
-package br.com.alura.ProjetoAlura.registration;
+package br.com.alura.ProjetoAlura.registration.controller;
 
 import br.com.alura.ProjetoAlura.course.model.Course;
 import br.com.alura.ProjetoAlura.course.service.CourseService;
+import br.com.alura.ProjetoAlura.registration.service.RegistrationService;
+import br.com.alura.ProjetoAlura.registration.dto.NewRegistrationDTO;
+import br.com.alura.ProjetoAlura.registration.dto.RegistrationAssembler;
+import br.com.alura.ProjetoAlura.registration.dto.RegistrationReportItem;
+import br.com.alura.ProjetoAlura.registration.dto.RegistrationReportItemAssembler;
+import br.com.alura.ProjetoAlura.registration.dto.RegistrationReportItemProjection;
+import br.com.alura.ProjetoAlura.registration.model.Registration;
 import br.com.alura.ProjetoAlura.user.User;
 import br.com.alura.ProjetoAlura.user.UserService;
 import jakarta.validation.Valid;
@@ -26,7 +33,7 @@ public class RegistrationController {
     private final RegistrationReportItemAssembler itemAssembler;
 
     @PostMapping("/registration/new")
-    public ResponseEntity createCourse(@Valid @RequestBody NewRegistrationDTO newRegistration) {
+    public ResponseEntity register(@Valid @RequestBody NewRegistrationDTO newRegistration) {
         Course course = courseService.findByCode(newRegistration.getCourseCode());
         User user = userService.findByEmail(newRegistration.getStudentEmail());
         Registration registration = assembler.toEntity(course, user);

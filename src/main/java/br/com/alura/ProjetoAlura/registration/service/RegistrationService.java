@@ -1,5 +1,9 @@
-package br.com.alura.ProjetoAlura.registration;
+package br.com.alura.ProjetoAlura.registration.service;
 
+import br.com.alura.ProjetoAlura.registration.repository.RegistrationRepository;
+import br.com.alura.ProjetoAlura.registration.validator.RegistrationValidator;
+import br.com.alura.ProjetoAlura.registration.dto.RegistrationReportItemProjection;
+import br.com.alura.ProjetoAlura.registration.model.Registration;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

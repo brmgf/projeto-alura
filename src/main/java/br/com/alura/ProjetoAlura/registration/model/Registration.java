@@ -1,4 +1,4 @@
-package br.com.alura.ProjetoAlura.registration;
+package br.com.alura.ProjetoAlura.registration.model;
 
 import br.com.alura.ProjetoAlura.course.model.Course;
 import br.com.alura.ProjetoAlura.user.User;
@@ -11,12 +11,14 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

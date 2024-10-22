@@ -1,4 +1,4 @@
-package br.com.alura.ProjetoAlura.registration;
+package br.com.alura.ProjetoAlura.registration.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
