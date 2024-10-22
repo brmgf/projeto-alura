@@ -2,35 +2,21 @@ package br.com.alura.ProjetoAlura.registration;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class NewRegistrationDTO {
 
-    @NotBlank
-    @NotNull
+    @NotBlank(message = "It is mandatory to enter a course code.")
     private String courseCode;
 
-    @NotBlank
-    @NotNull
+    @NotBlank(message = "It is mandatory to inform the student's email address.")
     @Email
     private String studentEmail;
-
-    public NewRegistrationDTO() {}
-
-    public String getCourseCode() {
-        return courseCode;
-    }
-
-    public void setCourseCode(String courseCode) {
-        this.courseCode = courseCode;
-    }
-
-    public String getStudentEmail() {
-        return studentEmail;
-    }
-
-    public void setStudentEmail(String studentEmail) {
-        this.studentEmail = studentEmail;
-    }
-
 }

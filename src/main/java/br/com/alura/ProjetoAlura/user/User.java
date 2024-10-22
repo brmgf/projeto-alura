@@ -1,10 +1,23 @@
 package br.com.alura.ProjetoAlura.user;
 
 import br.com.alura.ProjetoAlura.util.EncryptUtil;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
 @Entity
 public class User {
 
@@ -13,41 +26,23 @@ public class User {
     private Long id;
 
     private LocalDateTime createdAt = LocalDateTime.now();
+
     private String name;
 
+    @NotNull
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @NotBlank
     private String email;
-    private String password;
 
-    @Deprecated
-    public User() {}
+    @NotBlank
+    private String password;
 
     public User(String name, String email, Role role, String password) {
         this.name = name;
         this.role = role;
         this.email = email;
         this.password = EncryptUtil.toMD5(password);
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public String getPassword() {
-        return password;
     }
 }

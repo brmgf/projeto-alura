@@ -32,4 +32,11 @@ public class UserService {
 
         return user;
     }
+
+    @Transactional(readOnly = true)
+    public User findByEmail(String email) {
+        return repository.findByEmail(email).orElseThrow(
+                () -> new DomainException("There is no registered user with the email address informed, please try again.")
+        );
+    }
 }
