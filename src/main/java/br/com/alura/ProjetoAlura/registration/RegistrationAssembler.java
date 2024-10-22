@@ -1,6 +1,6 @@
 package br.com.alura.ProjetoAlura.registration;
 
-import br.com.alura.ProjetoAlura.course.Course;
+import br.com.alura.ProjetoAlura.course.model.Course;
 import br.com.alura.ProjetoAlura.user.User;
 import org.springframework.stereotype.Component;
 

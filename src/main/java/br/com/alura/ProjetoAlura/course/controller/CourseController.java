@@ -1,5 +1,9 @@
-package br.com.alura.ProjetoAlura.course;
+package br.com.alura.ProjetoAlura.course.controller;
 
+import br.com.alura.ProjetoAlura.course.service.CourseService;
+import br.com.alura.ProjetoAlura.course.dto.NewCourseDTO;
+import br.com.alura.ProjetoAlura.course.dto.NewCourseDTODisassembler;
+import br.com.alura.ProjetoAlura.course.model.Course;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

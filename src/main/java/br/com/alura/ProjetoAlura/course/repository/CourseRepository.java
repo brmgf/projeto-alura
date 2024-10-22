@@ -1,5 +1,6 @@
-package br.com.alura.ProjetoAlura.course;
+package br.com.alura.ProjetoAlura.course.repository;
 
+import br.com.alura.ProjetoAlura.course.model.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

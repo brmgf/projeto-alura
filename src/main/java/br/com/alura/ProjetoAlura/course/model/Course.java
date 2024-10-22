@@ -1,4 +1,4 @@
-package br.com.alura.ProjetoAlura.course;
+package br.com.alura.ProjetoAlura.course.model;
 
 import br.com.alura.ProjetoAlura.user.User;
 import jakarta.persistence.Column;

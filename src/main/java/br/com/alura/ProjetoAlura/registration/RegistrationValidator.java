@@ -1,6 +1,6 @@
 package br.com.alura.ProjetoAlura.registration;
 
-import br.com.alura.ProjetoAlura.course.Status;
+import br.com.alura.ProjetoAlura.course.model.Status;
 import br.com.alura.ProjetoAlura.user.Role;
 import br.com.alura.ProjetoAlura.util.DomainException;
 import lombok.RequiredArgsConstructor;

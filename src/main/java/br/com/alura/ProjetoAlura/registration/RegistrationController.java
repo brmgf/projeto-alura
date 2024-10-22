@@ -1,7 +1,7 @@
 package br.com.alura.ProjetoAlura.registration;
 
-import br.com.alura.ProjetoAlura.course.Course;
-import br.com.alura.ProjetoAlura.course.CourseService;
+import br.com.alura.ProjetoAlura.course.model.Course;
+import br.com.alura.ProjetoAlura.course.service.CourseService;
 import br.com.alura.ProjetoAlura.user.User;
 import br.com.alura.ProjetoAlura.user.UserService;
 import jakarta.validation.Valid;

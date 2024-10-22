@@ -1,5 +1,7 @@
-package br.com.alura.ProjetoAlura.course;
+package br.com.alura.ProjetoAlura.course.dto;
 
+import br.com.alura.ProjetoAlura.course.model.Course;
+import br.com.alura.ProjetoAlura.course.model.Status;
 import br.com.alura.ProjetoAlura.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -16,7 +18,7 @@ public class NewCourseDTODisassembler {
         newCourse.setCode(newCourseDTO.getCode());
         newCourse.setDescription(newCourseDTO.getDescription());
         newCourse.setStatus(Status.ACTIVE);
-        newCourse.setInstructor(userService.getInstructorByEmail(newCourseDTO.getInstructorEmail()));
+        newCourse.setInstructor(userService.findByEmail(newCourseDTO.getInstructorEmail()));
 
         return newCourse;
     }
